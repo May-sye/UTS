@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UTS</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Daftar buku</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>judul</th>
+            <th>penerbit</th>
+            <th>genre</th>
+            <th>Aksi</th>
+        </tr>
+        <% buku.forEach(buku => {%>
+        <tr>
+            <td><%= buku.id %></td>
+            <td><%= buku.judul %></td>
+            <td><%= buku.penerbit_buku %></td>
+            <td><%= buku.genre %></td>
+            <td>
+                <a href="/edit/<%= buku.id %>">Edit</a> |
+                <a href="/delete/<%= buku.id %>">Hapus</a>
+            </td>
+        </tr>
+        <% })%>
+    </table>
+
+    <h2>Tambah</h2>
+    <form action="/add" method="post">
+        <label for="judul_buku">judul :</label>
+        <input type="text" id="judul_buku" name="judul_buku"><br>
+        <label for="penerbit_buku">penerbit_buku :</label>
+        <input type="text" id="penerbit_buku" name="penerbit_buku"><br>
+        <label for="genre">genre :</label>
+        <input type="text" id="genre" name="genre"><br>
+        <button type="submit">Tambah</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h2>edit data angggota</h2>
+    <form action="/update/<%= angggota.id %>" method="post">
+        <label for="nama_anggota">Nama :</label>
+        <input type="text" id="nama_anggota" name="nama_anggota" required value="<%= angggota.nama_anggota %>"><br>
+        <label for="alamat">Alamat :</label>
+        <input type="text" id="alamat" name="alamat" required value="<%= angggota.alamat %>"><br>
+        <label for="no_telp">No Telp :</label>
+        <input type="text" id="no_telp" name="no_telp" required value="<%= angggota.no_telp %>"><br>
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="email" required value="<%= angggota.email %>"><br>
+        <label for="tgl_join">Tanggal Bergabung :</label>
+        <input type="date" id="tgl_join" name="tgl_join" required value="<%= angggota.tgl_join %>"><br>
+        <label for="status">Status :</label>
+        <input type="text" id="status" name="status" required value="<%= angggota.status %>"><br>
+        <button type="submit">simpan</button>
+    </form>
+</body>
+</html>
